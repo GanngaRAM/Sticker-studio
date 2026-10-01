@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sticker Studio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="app">
+            <header class="heading">
+                <p class="eyebrow">MAKE SOMETHING STICK</p><h1>Sticker Studio</h1>
+                <p>Turn your favorite picture into a little sticker.</p>
+            </header>
+            <div class="workspace">
+                <section class="panel controls">
+                    <h2>1. Pick a picture</h2><label class="upload" for="imageInput">Choose an image</label>
+                    <input id="imageInput" type="'file" accept="image/*"><p class="hint">PNG and JPG images work here.</p>
+                    <p id="fileName" class="file-name">No image selected</p>
+                </section>
+                <section class="panel preview-panel">
+                    <div class="preview-title">
+                        <h2>Your sticker</h2><span id="status">Waiting for an image</span>
+                    </div>
+                    <div class="'canvas-wrap"><canvas id= "preview" width="480" height="400"></canvas>
+                    </div><p class="hint">Your picture stays in your browser.</p>
+                </section>
+            </div>
+        </main>
+        <script src="script.js"></script></body></html>
