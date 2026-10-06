@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sticker Studio</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <main class="app">
-            <header class="heading">
-                <p class="eyebrow">MAKE SOMETHING STICK</p><h1>Sticker Studio</h1>
-                <p>Turn your favorite picture into a little sticker.</p>
-            </header>
-            <div class="workspace">
-                <section class="panel controls">
-                    <h2>1. Pick a picture</h2><label class="upload" for="imageInput">Choose an image</label>
-                    <input id="imageInput" type="'file" accept="image/*"><p class="hint">PNG and JPG images work here.</p>
-                    <p id="fileName" class="file-name">No image selected</p>
-                </section>
-                <section class="panel preview-panel">
-                    <div class="preview-title">
-                        <h2>Your sticker</h2><span id="status">Waiting for an image</span>
-                    </div>
-                    <div class="'canvas-wrap"><canvas id= "preview" width="480" height="400"></canvas>
-                    </div><p class="hint">Your picture stays in your browser.</p>
-                </section>
-            </div>
-        </main>
-        <script src="script.js"></script></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticker Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="heading">
+      <p class="eyebrow">MAKE SOMETHING STICK</p><h1>Sticker Studio</h1>
+      <p>Turn your favorite picture into a little sticker.</p>
+    </header>
+    <div class="workspace">
+      <section class="panel controls">
+        <h2>1. Pick a picture</h2><label class="upload" for="imageInput">Choose an image</label>
+        <input id="imageInput" type="file" accept="image/*"><p class="hint">Transparent PNGs work best.</p>
+        <p id="fileName" class="file-name">No image selected</p>
+        <div class="divider"></div>
+        <h2>2. Remove a plain background</h2>
+        <label class="check-row">
+          <input id="removeBg" type="checkbox">
+          Remove background color
+        </label>
+        <div class="field">
+          <label for="corner">Sample color from</label>
+          <select id="corner">
+            <option value="top-left">Top-left corner</option>
+            <option value="top-right">Top-right corner</option>
+            <option value="bottom-left">Bottom-left corner</option>
+            <option value="bottom-right">Bottom-right corner</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tolerance">Color tolerance</label>
+          <input id="tolerance" type="range" min="0" max="140" value="38">
+          <output id="toleranceValue">38</output>
+        </div>
+        <p class="hint">Works on simple, solid backgrounds. Choose a corner that shows the background color.</p>
+      </section>
+      <section class="panel preview-panel">
+        <div class="preview-title">
+          <h2>Your sticker</h2><span id="status">Waiting for an image</span>
+        </div>
+        <div class="canvas-wrap"><canvas id="preview" width="480" height="400"></canvas>
+        </div><p class="hint">Your picture stays in your browser.</p>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script></body></html>
